@@ -1,0 +1,61 @@
+header{
+    height: 100vh;
+}
+#banner_box{
+    position:relative;
+    width:100%;
+    /* height:30rem; */
+    height:100vh;
+    /* min-height: 100vh; */
+    /* z-index: -1; */
+}
+#banner_box>div{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+#banner_box>div>img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    object-fit: cover;
+}
+
+/* 设置左右切换按钮 */
+#banner_box>.btn{
+    position: absolute;
+    width:3rem;
+    height: 3rem;
+    top:60%;
+    transform: translateY(-50%);  
+    left:5%;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+#banner_box .btn:hover{
+    cursor:pointer;
+}
+#banner_box>.btn div{
+    width: 1.5rem;
+    height:1.5rem;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transform: translateX(5px) rotate(-45deg);
+}
+#banner_box>.btn:nth-of-type(2){
+    left:calc(95% - 50px);
+}
+#banner_box>.btn:nth-of-type(2) div{
+    transform: translateX(-5px) rotate(135deg);
+}
+.small-box{
+    transition: opacity 0.5s ;
+}

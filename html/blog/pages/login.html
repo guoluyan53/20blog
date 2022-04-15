@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../static/css/login.css">
+	<title>Login</title>
+</head>
+
+<body>
+	<div class="body-box">
+		<div class="container">
+			<div class="welcome">
+				<p>WELCOME</p>
+			</div>
+
+			<div class="log-sign-box">
+
+				<!-- 两个单选选取登录或者注册 -->
+				<input id="choose-login" type="radio" name="login-nav" checked>
+				<label for="choose-login" class="choose-login-focus">
+					<span>Login</span>
+				</label>
+
+				<input id="choose-sign" type="radio" name="login-nav">
+				<label for="choose-sign" class="choose-sign-focus">
+					<span>Sign</span>
+				</label>
+				<hr>
+				<!-- 两个单选框下面的分割线 -->
+
+
+				<div class="form-box">
+					<!-- 登录表单 -->
+					<form class="log-form" name="logform" action="">
+
+						<div class="login-form-group">
+							<span class="log-input-icon"></span>
+							<input type="text" class="input" name="username" placeholder="username">
+						</div>
+
+						<div class="login-form-group">
+							<span class="log-input-icon"></span>
+							<input type="password" class="input" name="password" placeholder="password" autocomplete="off">
+						</div>
+
+						<div class="login-form-group">
+
+							<label for="remember-check">
+								<input type="checkbox" id="remember-check" class="remember-check">
+								<span class="remember-icon"></span>
+								<span>Remember</span>
+							</label>
+
+							<span class="login-forget-link"><a href="#forget">Forgot</a></span>
+						</div>
+
+						<div class="login-form-group">
+							<input type="button" class="login-button" value="Login">
+						</div>
+					</form>
+
+
+
+					<!-- 下面是注册的表单:分成3组 -->
+					<form action="" class="sign-form" name="signform">
+						<div class="sign-group-box">
+							<!--分成3组上面两组有2个小组-->
+							<div class="sign-form-group">
+								<span class="sign-input-icon"></span>
+								<input type="text" class="input" name="username" placeholder="username">
+							</div>
+
+							<div class="sign-form-group">
+								<span class="sign-input-icon"></span>
+								<input type="text" class="input" name="email" placeholder="e-mail">
+							</div>
+						</div>
+
+
+						<div class="sign-group-box">
+							<!--分成3组上面两组有2个小组-->
+							<div class="sign-form-group">
+								<span class="sign-input-icon"></span>
+								<input type="password" class="input" name="password" placeholder="password">
+							</div>
+
+							<div class="sign-form-group">
+								<span class="sign-input-icon"></span>
+								<input type="text" class="input" name="confirm" placeholder="confirm">
+							</div>
+						</div>
+
+						<div class="sign-group-box">
+							<div class="sign-form-group">
+								<input type="button" class="sign-button" value="Sign up">
+							</div>
+						</div>
+					</form>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</body>
+<script src="../static/lib/jquery-3.4.1.js"></script>
+<script src="../static/lib/cookie1.js"></script>
+<!-- <script src="../static/lib/template-web.js"></script> -->
+<script src="../static/js/getUrlQuery.js"></script>
+<script src="../static/js/my-plugin.js"></script>
+<!-- <script src="../static/js/loginContral.js"></script> -->
+<!-- <script src="../static/js/getFormData.js"></script> -->
+<script src="../static/js/login.js"></script>
+
+</html>

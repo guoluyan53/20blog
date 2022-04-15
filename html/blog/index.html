@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer" />
+    <title>homyit_index</title>
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/nav.css">
+    <link rel="stylesheet" href="./static/css/banner.css">
+    <link rel="stylesheet" href="./static/css/footer.css">
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <!-- 左边logo--回到首页 -->
+        <a class="logo-box" href="/index.html">
+            <div class="logo"></div>
+        </a>
+        <!-- 左边logo--回到首页 结束-->
+        <!-- 右边导航文字 -->
+        <ul class="nav-right">
+            <script type="text/html" id="navRender">
+                {{each navData value}}
+                <li>
+                    <a href="/">{{value.title}}</a>
+                    <ul class="nav-right-level2">
+                        {{each value.children val}}
+                        <li><a href="/index.html?c_id={{val.id}}">{{val.title}}</a></li>
+                        {{/each}}
+                    </ul>
+                </li>
+                {{/each}}
+            </script>
+        </ul>
+        <!-- 登录部分 -->
+        <div class="nav-right nav-login-sign">
+            <script type="text/html" id="navLoginSign">
+                {{if logined}}
+                <!-- 登录后 -->
+                <a href="/pages/manage.html">{{username}}</a>
+                <a href="" class="out-login">Cancel</a>
+                {{else}}
+                <!-- 登录前 -->
+                <a href="/pages/login.html?type=login">Login</a>
+                <a href="/pages/login.html?type=sign">Sign</a>
+                {{/if}}
+            </script>
+            <!-- <a href="/pages/login.html">Login</a>
+            <a href="/pages/login.html">Sign</a> -->
+        </div>
+        <!-- 登录部分 结束 -->
+        <!-- 右边导航文字 结束 -->
+    </nav>
+    <!-- 导航栏 结束-->
+
+    <!-- header 首部 大背景 轮播图 -->
+    <header>
+        <div id="banner_box"></div>
+        <div id="header-title">HOMYIT STUDIO</div>
+        <div id="header-motto">Set sail again with HOMYIT in 2021</div>
+        <div id="header-more">
+          <a href="#content">  
+            <div id="header-down"></div>
+          </a>
+            <p>LEARN MORE</p>
+        </div>
+    </header>
+    <!-- header 首部 大背景 轮播图  结束-->
+
+    <!-- content 三个盒子并排文章显示 -->
+    <div id="content">
+        <div id="content-header">
+            <div id="content-header-one">WELCOME TO HOMYIT</div>
+            <div id="content-header-two">Nothing Is Difficult For A Willing Heart</div>
+            <div id="content-header-three">We Create Beautiful Experiences For U</div>
+        </div>
+
+        <!-- 并排的盒子 -->
+        <div id="content-list">
+            <script type="text/html" id="cardRender">
+                {{each categoryListData value}}
+                <div class="content-box">
+                    <div class="content-img">
+                        <img src="{{value.picture}}" alt="">
+                    </div>
+
+                    <div class="content-name">{{value.title}}</div>
+                    <p class="content-description">
+                        {{value.content}}
+                    </p>
+
+                    <div class="content-details">
+                        <p class="content-edit-time">
+                            <img src="./static/images/pen.png" alt="">
+                            {{value.time}}
+                        </p>
+                        <a href="" findMore class="content-more">MORE</a>
+                    </div>
+                </div>
+                {{/each}}
+            </script>
+        </div>
+       
+    </div>
+    <!-- content 三个盒子并排文章显示  结束-->
+
+    <!-- 中间的横幅大片 -->
+    <div id="middle">
+        <p class="middle-title">The Fastest Way To Develop</p>
+        <button class="middle-btn" onclick="toTop()">LEARN MORE</button>
+    </div>
+    <!-- 中间的横幅大片 结束 -->
+
+    <!-- 文章竖排列表 -->
+    <div id="article">
+        <!-- 并列盒子 -->
+        <div id="article-left">
+            <script type="text/html" id="articleRender">
+                <!-- 单个盒子 -->
+                {{each articleData value}}
+                <div class="article-card">
+                    <div class="article-card-img">
+                        <img src="{{value.picture}}" alt="">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-message">
+                            <h3 class="article-title">{{value.title}}</h3>
+                            <div class="article-time">---{{value.date}}</div>
+                            <p class="article-text">
+                                {{value.content}}
+                            </p>
+                        </div>
+                        <div class="article-more">
+                            <a href="" findMore>MORE</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 单个盒子 -->
+                {{/each}}
+            </script>
+        </div>
+        <!-- 并列盒子 -->
+        <div id="article-right"></div>
+    </div>
+    <!-- 文章竖排列表 结束 -->
+
+    <!-- 底部横幅大片 bottom-->
+    <div id="bottom">
+        <p class="bottom-text1 text">LIGHTHOUSE</p>
+        <p class="bottom-text2 text">“Don't give up your dream,the world <br> needs you”</p>
+        <p class="bottom-text3 text">LawTence Edward Page / Google</p>
+    </div>
+    <!-- 底部横幅大片 结束 -->
+
+    <!-- footer -->
+    <footer id="footer">
+        <div class="footer-left">HOMYIT</div>
+        <div class="footer-middle">@copyright Homyit Studio</div>
+    </footer>
+    <!-- footer 结束 -->
+</body>
+    <!-- 注意引入的顺序 -->
+    <script src="./static/js/bannershow.js"></script>
+    <script src="./static/lib/template-web.js"></script>
+    <script src="./static/js/myData.js"></script>
+    <script src="./static/lib/jquery-3.4.1.js"></script>
+    <script src="./static/lib/cookie1.js"></script>
+    <script src="./static/js/my-plugin.js"></script>
+    <script src="./static/js/loginContral.js"></script>
+    <script src="./static/js/index.js"></script>
+    
+</html>
+

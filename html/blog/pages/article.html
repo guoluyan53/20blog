@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer" />
+  <title>Article</title>
+  <link rel="stylesheet" href="../static/css/article.css">
+  <link rel="stylesheet" href="../static/css/footer.css">
+  <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.css">
+</head>
+<body>
+  <!-- header -->
+  <header>
+    <img src="../static/images/logo.png" alt="">
+  </header>
+  <!-- header 结束 -->
+
+  <main>
+    <!-- 文章详情 -->
+    <div class="article_box">
+      <script type="text/html" id="articleBox">
+        <p class="article_title">{{data.title}}</p>
+        <div class="article_time">
+          <i class="fa fa-pencil" aria-hidden="true"><span>{{data.time}}</span></i>
+          <i class="fa fa-user-o" aria-hidden="true"><span>By:{{data.author}}</span></i>
+        </div>
+        <img src="{{data.picture}}" alt="">
+        <p class="article_content">{{data.content}}</p>
+        <div class="article_button">
+          <button onclick="history.back()">Back</button>
+        </div>
+      </script>
+    </div> 
+    <!-- 文章详情 结束 -->
+
+    <div class="article_words">
+      <p>PROGRAMMING</p>
+      <div>About<br>INSIST</div>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer id="footer">
+    <div class="footer-left">HOMYIT</div>
+    <div class="footer-middle">@copyright Homyit Studio</div>
+  </footer>
+  <!-- footer 结束 -->
+
+  <script src="../static/lib/jquery-3.4.1.js"></script>
+  <script src="../static/lib/template-web.js"></script>
+  <script src="../static/lib/cookie1.js"></script>
+  <script src="../static/js/my-plugin.js"></script>
+  <script src="../static/js/loginContral.js"></script>
+  <script src="../static/js/getUrlQuery.js"></script>
+  <script src="../static/js/article.js"></script>
+</body>
+</html>

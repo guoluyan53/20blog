@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer" />
+  <title>Manage</title>
+  <link rel="stylesheet" href="../static/css/manage.css">
+  <link rel="stylesheet" href="../static/css/footer.css">
+  <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.css">
+</head>
+
+<body>
+  <div id="allBox">
+    <!-- header -->
+    <header id="header">
+      <script type="text/html" id="headerBox">
+        <img src="../static/images/logo.png" alt="">
+        <span>WELCOME! {{data}}</span>
+        <a href="javascript:void(0)" onclick="Cancel()">Cancel</a>
+      </script>
+    </header>
+    <!-- header 结束 -->
+
+    <!-- main  -->
+    <main>
+      <div id="manage">
+        <!-- 文章盒子 -->
+        <script type="text/html" id="manageBox">
+          {{each data value}}
+          <div class="manage_box">
+            <img src="{{value.picture}}" alt="">
+            <div class="manage_content">
+              <a href="article.html?article_id={{value.id}}">{{value.title}}</a>
+              <div class="manage_content_top">
+                <span>By:{{value.author}}</span>
+                <i class="fa fa-calendar" aria-hidden="true">{{value.time}}</i>
+              </div>
+              <p>{{value.content}}</p>
+              <div class="manage_button">
+                <button onclick="delArticles('{{value.id}}')">Delete</button>
+                <button>Edit</button>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </script>
+        <!-- 文章盒子 -->
+      </div>
+
+      <div id="bottomBox">
+        <!-- 添加按钮 -->
+        <div id="addBox">
+          <a href="add.html"><img src="../static/images/add.png" alt="">Add</a>
+        </div>
+        <!-- 添加按钮 -->
+
+        <!-- 分页 -->
+        <div id="pagination">
+          <a href="" class="pre" onclick="pre();return false;">&lt;</a>
+          <!-- return false;表示点击链接后页面不发生跳转，还是在页面原来的位置 -->
+          <div id="pageNum"></div>
+          <a href="" class="next" onclick="next();return false;">&gt;</a>
+        </div>
+        <!-- 分页 -->
+      </div>
+    </main>
+    <!-- main 结束 -->
+  </div>
+
+  <!-- footer -->
+  <footer id="footer">
+    <div class="footer-left">HOMYIT</div>
+    <div class="footer-middle">@copyright Homyit Studio</div>
+  </footer>
+  <!-- footer 结束 -->
+
+  <script src="../static/lib/template-web.js"></script>
+  <script src="../static/lib/jquery-3.4.1.js"></script>
+  <script src="../static/lib/cookie1.js"></script>
+  <script src="../static/js/my-plugin.js"></script>
+  <script src="../static/js/loginContral.js"></script>
+  <script src="../static/js/getUrlQuery.js"></script>
+  <script src="../static/js/manage.js"></script>
+</body>
+
+</html>
